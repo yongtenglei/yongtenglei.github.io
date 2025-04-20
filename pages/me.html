@@ -5,10 +5,296 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Me</title>
     <link href="/assets/css/style.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.png">
+    <style>
+      /* Container that holds the timeline */
+      .timeline-container {
+        position: relative;
+        width: 100%;
+        margin-top: 40px;
+        min-height: 100px;
+      }
+
+      /* The vertical timeline */
+      .timeline-line {
+        content: '';
+        position: absolute;
+        width: 4px;
+        background-color: #ffa500;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+      }
+
+      /* Timeline items wrapper */
+      .timeline-items {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding: 20px 0;
+      }
+
+      /* Timeline items */
+      .timeline-item {
+        padding: 10px 40px;
+        position: relative;
+        width: 50%;
+        box-sizing: border-box;
+        margin: 0;
+      }
+
+      /* Left items */
+      .timeline-item.left {
+        left: 0;
+        padding-right: 50px;
+      }
+
+      /* Right items */
+      .timeline-item.right {
+        left: 50%;
+        padding-left: 50px;
+      }
+
+      /* The circles on the timeline */
+      .timeline-item::after {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: #fff;
+        border: 3px solid #ffa500;
+        border-radius: 50%;
+        z-index: 2;
+        top: 50%;
+        transform: translateY(-50%);
+        box-sizing: border-box;
+      }
+
+      /* Position circles */
+      .timeline-item.left::after {
+        right: -10px;
+      }
+
+      .timeline-item.right::after {
+        left: -10px;
+      }
+
+      /* The actual content */
+      .timeline-content {
+        padding: 20px;
+        background-color: #fff8dc;
+        position: relative;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        z-index: 2;
+      }
+
+      /* Add arrows to the left container (pointing right) */
+      .timeline-item.left .timeline-content::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: -10px;
+        transform: translateY(-50%);
+        border-style: solid;
+        border-width: 10px 0 10px 10px;
+        border-color: transparent transparent transparent #fff8dc;
+      }
+
+      /* Add arrows to the right container (pointing left) */
+      .timeline-item.right .timeline-content::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -10px;
+        transform: translateY(-50%);
+        border-style: solid;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent #fff8dc transparent transparent;
+      }
+
+      .timeline-content h2 {
+        margin: 0 0 10px 0;
+        color: #333;
+        background: transparent;
+      }
+
+      .timeline-content p {
+        margin: 0;
+        color: #666;
+        line-height: 1.4;
+        background: transparent;
+        overflow: hidden;
+      }
+
+      .timeline-content .emphasis {
+        font-weight: 600;
+        color: #1a1a1a;
+        background: transparent;
+        display: inline;
+        margin-bottom: 0;
+        letter-spacing: 0.3px;
+      }
+
+      .timeline-content .logo {
+        height: 90px;
+        float: right;
+        margin: 0 0 4px 8px;
+        opacity: 1;
+      }
+
+      /* Media queries */
+      @media screen and (max-width: 600px) {
+        .timeline-line {
+          left: 29px;
+          transform: none;
+        }
+
+        .timeline-items {
+          padding-left: 0;
+          padding-right: 0;
+        }
+
+        .timeline-item {
+          width: calc(100% - 60px);
+          padding: 10px 0;
+          margin-left: 60px;
+        }
+
+        .timeline-item.left,
+        .timeline-item.right {
+          left: 0;
+          padding-left: 0;
+          padding-right: 0;
+        }
+
+        .timeline-item::after {
+          width: 16px;
+          height: 16px;
+        }
+
+        .timeline-item.left::after,
+        .timeline-item.right::after {
+          left: -37px;
+          right: auto;
+        }
+
+        .timeline-item.left .timeline-content::before,
+        .timeline-item.right .timeline-content::before {
+          left: -10px;
+          right: auto;
+          border-width: 10px 10px 10px 0;
+          border-color: transparent #fff transparent transparent;
+        }
+      }
+    </style>
   </head>
   <body>
     <header>
       <h1>Introduction</h1>
     </header>
+    <div class="content">
+      <h2 style="margin-left: 28px;">Education</h2>
+      <div class="timeline-container">
+        <div class="timeline-line"></div>
+        <div class="timeline-items">
+          <div class="timeline-item left">
+            <div class="timeline-content">
+              <h2>09/2023 - 11/2024</h2>
+              <p>
+                <img class="logo" src="/assets/images/uoe_logo.jpeg" alt="UoE Logo">
+                <span class="emphasis">University of Edinburgh</span><br>
+                <span class="emphasis">MSc Computer Science</span><br>
+                Master of Science with GPA: 3.67/4 (Top 20%)<br>
+                <span class="emphasis">
+                  Dissertation: <br>
+                  A visual solver for fair division: Adding state-of-the-art-algorithms <a
+                  href="/assets/downloads/UoE_Diss_Yongteng.pdf" download="UoE_Diss_Yongteng"
+                  style="color: #0366d6; text-decoration: none; background: transparent;">(English)</a>
+                </span>
+                <br>
+                Frontend: <a href="https://github.com/yongtenglei/cake"
+                style="color: #0366d6; text-decoration: none; background: transparent;">Cake</a>
+                Backend: <a href="https://github.com/yongtenglei/treat_cake"
+                style="color: #0366d6; text-decoration: none; background: transparent;">Treat Cake (Main work)</a>
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item right">
+            <div class="timeline-content">
+              <h2>09/2019 - 07/2023</h2>
+              <p>
+                <img class="logo" src="/assets/images/xjtlu_logo.jpeg" alt="XJTLU Logo">
+                <span class="emphasis">Xi'an Jiaotong-Liverpool University</span><br>
+                <span class="emphasis">BSc Data Science and Big Data Technology</span><br>
+                Bachelor of Engineering with GPA: 3.72/4 (Top 5%)<br>
+                Awards: Best Final Year Project (Top 1), Best Interdisciplinary Project, 2023 Jiangsu Province Outstanding
+                Graduation Thesis Second Prize,<br>
+                President of <a href="https://github.com/LMLEC"
+                style="color: #0366d6; text-decoration: none; background: transparent;">Linux makes your life Easier
+                  Club (LEC)</a> <br>
+                <span class="emphasis">
+                  Dissertation: <br>
+                  Investigating Fair Allocation Algorithms to Put them into Wider Use through an Easy-to-Use Interface
+                  (Full stack)<br>
+                  <a href="/assets/downloads/XJTLU_Diss_Maruf_Yongteng.pdf" download="XJTLU_Diss_Maruf_Yongteng"
+                  style="color: #0366d6; text-decoration: none; background: transparent;">(English - Main version)</a>,
+                  <a href="/assets/downloads/XJTLU_Diss_Maruf_Yongteng_Chinese.pdf"
+                  download="XJTLU_Diss_Maruf_Yongteng_Chinese"
+                  style="color: #0366d6; text-decoration: none; background: transparent;">(Chinese - Translated)</a>
+                </span>
+                <br>
+                Frontend: <a href="https://github.com/yongtenglei/fairallol"
+                style="color: #0366d6; text-decoration: none; background: transparent;">Fairallol</a>
+                Backend: <a href="https://github.com/yongtenglei/fairallol_server"
+                style="color: #0366d6; text-decoration: none; background: transparent;">Fairallol Server</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 style="margin-left: 28px; margin-top: 40px;">Experience</h2>
+      <div class="timeline-container">
+        <div class="timeline-line"></div>
+        <div class="timeline-items">
+          <div class="timeline-item left">
+            <div class="timeline-content">
+              <h2>04/2025</h2>
+              <p> Introduced
+                Introduced the <a href="https://github.com/infiniflow/ragflow/pull/7084"
+                style="color: #0366d6; text-decoration: none; background: transparent;">SSE transport-based RAGFlow MCP
+                  server</a> with MCP low-level SDK, enabling
+                requests at user API_TOKEN granularity, where SSE transport enables server-to-client streaming and HTTP
+                POST is used for client-to-server communication.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item right">
+            <div class="timeline-content">
+              <h2>02/2025</h2>
+              <p>Started my journey as a software engineer at <a href="https://github.com/infiniflow"
+                style="color: #0366d6; text-decoration: none; background: transparent;">InfiniFlow</a> with great honor
+                as my technical skills and expertise have been fully recognized and appreciated by the team, specializing
+                in core feature development for
+                <a href="https://github.com/infiniflow/ragflow"
+                style="color: #0366d6; text-decoration: none; background: transparent;">RAGFlow</a>, with a focus on
+                designing and implementing AI-enhanced retrieval architectures and hybrid search
+                optimization mechanisms.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <footer> -->
+    <!--   <hr> -->
+    <!--   <p style="text-align: center; max-width: 1280px; margin: 0 auto; height: 37px; line-height: 37px; z-index: 5;"> -->
+    <!--     <a href="/index.html">Home</a> -->
+    <!--   </p> -->
+    <!-- </footer> -->
   </body>
 </html>
+
