@@ -1,0 +1,27 @@
+{
+  "name": "my-website",
+  "version": "1.0.0",
+  "description": "Visit [here](https://yongtenglei.github.io/) to home page.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yongtenglei/yongtenglei.github.io.git"
+  },
+  "scripts": {
+    "format": "prettier . --write",
+    "lint:js": "eslint . --ext .js,.html",
+    "lint:css": "stylelint \"**/*.css\"",
+    "lint": "npm run lint:js && npm run lint:css"
+  },
+  "keywords": [],
+  "author": "Yongteng Lei (yongtengrey@outlook.com)",
+  "homepage": "https://github.com/yongtenglei/yongtenglei.github.io",
+  "devDependencies": {
+    "eslint": "^9.0.0",
+    "@eslint/eslintrc": "^2.1.2",
+    "eslint-plugin-html": "^8.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.2.5",
+    "stylelint": "^16.3.1",
+    "stylelint-config-standard": "^35.0.0"
+  }
+}

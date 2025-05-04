@@ -1,53 +1,52 @@
 * {
-/* background-color: #fff7d7; */
-background-color: rgb(255, 255, 240);
-font-family: Arial, sans-serif;
+  /* background-color: #fff7d7; */
+  background-color: rgb(255, 255, 240);
+  font-family: Arial, sans-serif;
 }
 body {
-font-family: Arial, sans-serif;
-margin: 10px auto;
-margin-top: 0;
-max-width: 1280px;
-width: 100%;
+  font-family: Arial, sans-serif;
+  margin: 10px auto;
+  margin-top: 0;
+  max-width: 1280px;
+  width: 100%;
 }
 header {
-text-align: center;
-padding: 20px;
-margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+  margin: 0 auto;
 }
 .content {
-padding: 20px;
-margin-bottom: 50px;
+  padding: 20px;
+  margin-bottom: 50px;
 }
-a.fn
-{
-text-decoration: none;
-font-size: 60%;
-vertical-align: top;
-color: blue;
+a.fn {
+  text-decoration: none;
+  font-size: 60%;
+  vertical-align: top;
+  color: blue;
 }
 hr {
-border: none;
-height: 1px;
-background-color: #ffa500;
-margin: 0 0;
+  border: none;
+  height: 1px;
+  background-color: #ffa500;
+  margin: 0 0;
 }
 code {
-font-family: monospace;
-background-color: #f1f1f1;
-padding: 2px;
-font-size: 105%;
-border: 0;
-border-radius: 4px;
+  font-family: monospace;
+  background-color: #f1f1f1;
+  padding: 2px;
+  font-size: 105%;
+  border: 0;
+  border-radius: 4px;
 }
 footer {
-position: fixed;
-bottom: 0;
-max-width: 1280px;
-padding: 20px;
-padding-bottom: 0;
-padding-top: 10px;
-margin: 0 auto;
-left: 0;
-right: 0;
+  position: fixed;
+  bottom: 0;
+  max-width: 1280px;
+  padding: 20px;
+  padding-bottom: 0;
+  padding-top: 10px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
 }

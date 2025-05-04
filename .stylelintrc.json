@@ -1,0 +1,8 @@
+{
+  "extends": ["stylelint-config-standard"],
+  "rules": {
+    "string-quotes": "double",
+    "max-line-length": 120,
+    "indentation": 2
+  }
+}

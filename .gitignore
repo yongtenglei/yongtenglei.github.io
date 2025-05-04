@@ -33,3 +33,25 @@ Temporary Items
 # iCloud generated files
 *.icloud
 
+# Node
+node_modules/
+package-lock.json
+npm-debug.log*
+yarn.lock
+.pnpm-debug.log
+
+# VSCode/JetBrains
+.vscode/
+.idea/
+
+# Neovim
+*.swp
+*.swo
+
+dist/
+build/
+
+# prettier/eslint cache
+.prettiercache
+.eslintcache
+
